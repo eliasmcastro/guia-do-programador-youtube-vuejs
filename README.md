@@ -23,10 +23,15 @@
 
 - [Node.js](https://nodejs.org)
 
-### Executar
+### Clonar este repositório
 
-- `git clone https://github.com/eliasmcastro/guia-do-programador-youtube-vue.git` para clonar este repositório
-- `cd guia-do-programador-youtube-vue` para entrar na pasta
+```bash
+git clone https://github.com/eliasmcastro/guia-do-programador-youtube-vue.git
+```
+
+### Projeto Conceitos
+
+- `cd guia-do-programador-youtube-vue/conceitos` para entrar na pasta
 - `npm install` para instalar as dependências do projeto
 - `npm run serve` para iniciar o servidor de desenvolvimento
 - Acessar http://localhost:8080

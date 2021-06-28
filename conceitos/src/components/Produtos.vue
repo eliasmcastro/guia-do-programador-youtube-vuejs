@@ -11,10 +11,7 @@
       <strong>Código:</strong>
       <p>{{ codigoProduto }}</p>
 
-      <div>
-        <input type="number" v-model.number="pPreco" min="0" />
-        <button class="button" @click="mudarCor">Mudar Cor</button>
-      </div>
+      <p class="acao"><button class="button" @click="mudarCor">Mudar Cor</button></p>
     </li>
   </ul>
 </template>
@@ -80,23 +77,9 @@ ul li p {
   font-size: 16px;
 }
 
-div {
-  display: flex;
-  align-items: center;
-  align-content: space-between;
+.acao {
   margin-top: 10px;
-}
-
-input {
-  width: 100%;
-  height: 60px;
-  font: 400 18px Roboto, sans-serif;
-  color: #333;
-  border: 1px solid #dcdce6;
-  border-radius: 8px;
-  padding: 0 24px;
-  margin-bottom: 0;
-  margin-right: 10px;
+  text-align: right;
 }
 
 .cinza {

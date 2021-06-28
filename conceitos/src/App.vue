@@ -11,7 +11,7 @@
     <h3>Produtos Cadastrados</h3>
     <p v-if="produtos.length <= 0">Nenhum produto cadastrado...</p>
     <div v-else class="produto-container">
-      <div v-for="(produto, index) in produtos" :key="produto.pId">
+      <div v-for="(produto, index) in ordenaProdutoPorPreco" :key="produto.pId">
         <Produtos :pPosicao="index" :pNome="produto.pNome" :pPreco="produto.pPreco" @eventRemoveProduto="removeProduto($event)" />
       </div>
     </div>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import Usuarios from './components/Usuarios';
 import Admin from './components/Admin';
 import Produtos from './components/Produtos';
@@ -98,6 +99,11 @@ export default {
       this.produtos.splice($event.pPosicao, 1)
     }
   },
+  computed: {
+    ordenaProdutoPorPreco() {
+      return _.orderBy(this.produtos, ['pPreco'], ['desc'])
+    }
+  }
 };
 </script>
 
