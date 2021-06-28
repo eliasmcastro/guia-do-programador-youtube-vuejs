@@ -1,12 +1,14 @@
 <h1 align="center">
-  <img alt="Logo" src=".github/logo_vue.png" width="150px" />
+  <img alt="Logo" src=".github/logo_vue.png" width="130px" />
 </h1>
 
 <h3 align="center">
   Curso de Vue.js
 </h3>
 
-<p align="center">Curso básico de Vue.js</p>
+<p align="center">
+  <a href="https://www.youtube.com/playlist?list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0">Curso básico de Vue.js</a>
+</p>
 
 <p align="center">Por Victor Lima - Guia do Programador</p>
 
@@ -50,7 +52,7 @@ _Obs: Esse projeto não possui nenhuma lógica que faz sentido, apenas exemplos 
     - [Fira Code](https://github.com/tonsky/FiraCode)
 - [Vue CLI](https://cli.vuejs.org)
   - O Vue CLI é um sistema completo para o desenvolvimento rápido de Vue.js
-  - Para realizar a instalação executar `npm install -g @vue/cli`
+  - Para realizar a instalação, execute `npm install -g @vue/cli`
 
 ### Criando um projeto
 

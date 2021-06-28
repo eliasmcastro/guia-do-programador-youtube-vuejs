@@ -21,17 +21,18 @@
 
 <script>
 export default {
-  data() {
-    return {
-      comentario: "Algum comentário",
-    };
-  },
+  name: 'Usuarios',
   props: {
     nome: String,
     descricao: String,
     idade: Number,
     status: String,
   },
+  data() {
+    return {
+      comentario: 'Altere esse comentário',
+    };
+  }
 };
 </script>
 

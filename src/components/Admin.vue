@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  name: 'Admin',
   props: {
     admin: Object,
   },
@@ -32,11 +33,6 @@ export default {
   width: 100%;
   max-width: 1080px;
   margin: 32px auto;
-}
-
-.profile-container h1 {
-  margin-top: 50px;
-  margin-bottom: 24px;
 }
 
 .profile-container ul {

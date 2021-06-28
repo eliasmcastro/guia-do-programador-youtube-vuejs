@@ -1,5 +1,21 @@
 <template>
   <div id="app">
+    <h1>Produtos</h1>
+    <div class="produto-cadastro-container">
+      <input type="text" v-model="produtoNome" placeholder="Nome">
+      <input type="number" v-model.number="produtoPreco" placeholder="Preço">
+      <button class="button" @click="addProduto">Cadastrar</button>
+    </div>
+    <small class="nomeObrigatorio" v-show="produtoNomeErro">Nome do produto é obrigatório</small>
+    <hr>
+    <h3>Produtos Cadastrados</h3>
+    <p v-if="produtos.length <= 0">Nenhum produto cadastrado...</p>
+    <div v-else class="produto-container">
+      <div v-for="(produto, index) in produtos" :key="produto.pId">
+        <Produtos :pPosicao="index" :pNome="produto.pNome" :pPreco="produto.pPreco" @eventRemoveProduto="removeProduto($event)" />
+      </div>
+    </div>
+
     <h1>Usuários</h1>
     <select name="status" id="status" v-model="status">
       <option value="Ativo" selected>Ativo</option>
@@ -17,59 +33,70 @@
 
     <h1>Admin</h1>
     <Admin :admin="admin" />
-
-    <h1>Produtos</h1>
-    <div v-for="(produto, index) in produtos" :key="produto.pId">
-      <p>Contador do loop: {{index}}</p>
-      <Produto :pNome="produto.pNome" :pPreco="produto.pPreco" />
-      <input type="text" v-model="produto.pPreco" />
-      <hr />
-    </div>
   </div>
 </template>
 
 <script>
-import Usuarios from "./components/Usuarios";
-import Admin from "./components/Admin";
-import Produto from "./components/Produtos";
+import Usuarios from './components/Usuarios';
+import Admin from './components/Admin';
+import Produtos from './components/Produtos';
 
 export default {
-  name: "App",
-  data() {
-    return {
-      status: "Inativo",
-      admin: {
-        nome: "Nome do Admin",
-        status: "Ativo",
-      },
-      produtos: [
-        {
-          pId: 1,
-          pNome: "Celular",
-          pPreco: "50",
-        },
-        {
-          pId: 2,
-          pNome: "TV",
-          pPreco: "150",
-        },
-        {
-          pId: 3,
-          pNome: "Notebook",
-          pPreco: "200",
-        },
-        {
-          pId: 4,
-          pNome: "Video Game",
-          pPreco: "180",
-        },
-      ],
-    };
-  },
+  name: 'App',
   components: {
     Usuarios,
     Admin,
-    Produto,
+    Produtos,
+  },
+  data() {
+    return {
+      produtoNome: '',
+      produtoNomeErro: false,
+      produtoPreco: 0,
+      produtos: [
+        {
+          pId: 1,
+          pNome: 'Celular',
+          pPreco: 50,
+        },
+        {
+          pId: 3,
+          pNome: 'Notebook',
+          pPreco: 200,
+        },
+        {
+          pId: 4,
+          pNome: 'Video Game',
+          pPreco: 180,
+        },
+      ],
+      status: 'Inativo',
+      admin: {
+        nome: 'Nome do Admin',
+        status: 'Ativo',
+      },
+    };
+  },
+  methods: {
+    addProduto() {
+      if (this.produtoNome.trim() === '') {
+        this.produtoNomeErro = true
+        return
+      }
+
+      this.produtos.push({
+        pId: this.produtos.length + 1,
+        pNome: this.produtoNome,
+        pPreco: this.produtoPreco
+      })
+
+      this.produtoNome = ''
+      this.produtoNomeErro = false
+      this.produtoPreco = 0
+    },
+    removeProduto($event) {
+      this.produtos.splice($event.pPosicao, 1)
+    }
   },
 };
 </script>
@@ -102,14 +129,11 @@ select {
 }
 
 hr {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 button {
   cursor: pointer;
-}
-
-.button {
   width: 120px;
   height: 60px;
   background: #e02041;
@@ -117,16 +141,16 @@ button {
   border-radius: 8px;
   color: #fff;
   font-weight: 700;
-  margin-top: 16px;
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 60px;
   transition: filter 0.2s;
+  padding: 0 10px;
 }
 
-.button:hover {
+button:hover {
   filter: brightness(90%);
 }
 
@@ -137,8 +161,40 @@ button {
   margin: 32px auto;
 }
 
-#app h1 {
+#app h1, h3 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.produto-cadastro-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.produto-cadastro-container input + input {
+  margin: 0 10px;
+}
+
+.produto-cadastro-container button {
+  flex-grow: 2;
+}
+
+.nomeObrigatorio {
+  color: red;
+}
+
+.produto-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 32px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .produto-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>
