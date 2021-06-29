@@ -17,6 +17,12 @@
   <a href="#anotações">Anotações</a>
 </p>
 
+<p align="center">Pokedex</p>
+
+<p align="center">
+  <img alt="Fron-end" src=".github/frontend.png" width="90%">
+</p>
+
 ## Como executar o projeto
 
 ### Requisitos
@@ -37,6 +43,15 @@ git clone https://github.com/eliasmcastro/guia-do-programador-youtube-vue.git
 - Acessar http://localhost:8080
 
 _Obs: Esse projeto não possui nenhuma lógica que faz sentido, apenas exemplos de conceitos básicos do Vue.js_
+
+### Projeto Pokedex
+
+- `cd guia-do-programador-youtube-vue/pokedex` para entrar na pasta
+- `npm install` para instalar as dependências do projeto
+- `npm run serve` para iniciar o servidor de desenvolvimento
+- Acessar http://localhost:8080
+
+Exemplo de listagem e busca de pokémons
 
 ## Anotações
 
