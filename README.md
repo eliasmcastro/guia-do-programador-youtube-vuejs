@@ -32,12 +32,12 @@
 ### Clonar este repositório
 
 ```bash
-git clone https://github.com/eliasmcastro/guia-do-programador-youtube-vue.git
+git clone https://github.com/eliasmcastro/guia-do-programador-youtube-vuejs.git
 ```
 
 ### Projeto Conceitos
 
-- `cd guia-do-programador-youtube-vue/conceitos` para entrar na pasta
+- `cd guia-do-programador-youtube-vuejs/conceitos` para entrar na pasta
 - `npm install` para instalar as dependências do projeto
 - `npm run serve` para iniciar o servidor de desenvolvimento
 - Acessar http://localhost:8080
@@ -46,7 +46,7 @@ _Obs: Esse projeto não possui nenhuma lógica que faz sentido, apenas exemplos 
 
 ### Projeto Pokedex
 
-- `cd guia-do-programador-youtube-vue/pokedex` para entrar na pasta
+- `cd guia-do-programador-youtube-vuejs/pokedex` para entrar na pasta
 - `npm install` para instalar as dependências do projeto
 - `npm run serve` para iniciar o servidor de desenvolvimento
 - Acessar http://localhost:8080
