@@ -13,7 +13,7 @@
 <p align="center">Por Victor Lima - Guia do Programador</p>
 
 <p align="center">
-  <a href="#como-executar-o-projeto">Como executar o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-executar-o-projeto">Como executar o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#anotações">Anotações</a>
 </p>
 
